@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Boi - Documentation</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ff2768' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='6' width='20' height='12' rx='2'%3E%3C/rect%3E%3Cpath d='M12 12h.01'%3E%3C/path%3E%3Cpath d='M16 12h.01'%3E%3C/path%3E%3Cpath d='M8 12h.01'%3E%3C/path%3E%3Cpath d='M2 10h20'%3E%3C/path%3E%3C/svg%3E">
+    <meta http-equiv="refresh" content="0;url=documentation.html">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #0a111e;
+            color: #e9ecf1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        .loader {
+            width: 48px;
+            height: 48px;
+            border: 5px solid #ff2768;
+            border-bottom-color: transparent;
+            border-radius: 50%;
+            display: inline-block;
+            box-sizing: border-box;
+            animation: rotation 1s linear infinite;
+            margin-bottom: 20px;
+        }
+        .message {
+            font-size: 18px;
+            animation: fade 2s infinite;
+        }
+        @keyframes rotation {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes fade {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <span class="loader"></span>
+    <p class="message">Redirecting to documentation...</p>
+    <script>
+        window.location.href = 'documentation.html';
+    </script>
+</body>
+</html> 

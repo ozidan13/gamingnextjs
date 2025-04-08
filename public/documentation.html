@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming - Documentation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="documentation.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ff2768' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='6' width='20' height='12' rx='2'%3E%3C/rect%3E%3Cpath d='M12 12h.01'%3E%3C/path%3E%3Cpath d='M16 12h.01'%3E%3C/path%3E%3Cpath d='M8 12h.01'%3E%3C/path%3E%3Cpath d='M2 10h20'%3E%3C/path%3E%3C/svg%3E">
+</head>
+<body>
+    <!-- SVG Icons Library -->
+    <div class="svg-container" style="display: none;">
+        <object data="documentation-icons.svg" type="image/svg+xml" id="svg-icons"></object>
+    </div>
+
+    <button class="mobile-menu" id="mobileMenu">
+        <svg><use xlink:href="#icon-menu"></use></svg>
+    </button>
+    
+    <div class="container">
+        <aside class="sidebar" id="sidebar">
+            <div class="logo">
+                <svg><use xlink:href="#icon-gaming"></use></svg>
+                <h1>Docs | Osama</h1>
+            </div>
+            
+            <ul class="toc">
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#project-overview">Project Overview</a></li>
+                <li><a href="#technology-stack">Technology Stack</a></li>
+                <li><a href="#project-structure">Project Structure</a></li>
+                <li><a href="#core-features">Core Features</a></li>
+                <li><a href="#authentication">Authentication</a></li>
+                <li><a href="#data-models">Data Models</a></li>
+                <li><a href="#api-integration">API Integration</a></li>
+                <li><a href="#front-end-components">Front-end Components</a></li>
+                <li><a href="#user-interface">User Interface</a></li>
+                <li><a href="#deployment">Deployment & Configuration</a></li>
+                <li><a href="#getting-started">Getting Started</a></li>
+            </ul>
+        </aside>
+        
+        <main class="main-content">
+            <div class="hero">
+                <h1>Gaming Documentation</h1>
+                <p>A comprehensive guide to the Next.js gaming platform</p>
+            </div>
+            
+            <section id="introduction" class="section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <svg><use xlink:href="#icon-info"></use></svg>
+                    </div>
+                    <h2>Introduction</h2>
+                </div>
+                <p>Gaming is a modern web application built using Next.js that serves as a comprehensive gaming platform. It allows users to browse games, create wishlists, read and write reviews, and interact with other gamers through a comment system. The application leverages the power of Next.js App Router, MongoDB for data storage, and external gaming API integration to deliver a seamless gaming discovery experience.</p>
+            </section>
+            
+            <section id="project-overview" class="section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <svg><use xlink:href="#icon-star"></use></svg>
+                    </div>
+                    <h2>Project Overview</h2>
+                </div>
+                <p>The application is designed with both gamers and developers in mind, offering:</p>
+                
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <svg><use xlink:href="#icon-search"></use></svg>
+                        </div>
+                        <div class="feature-title">Game Discovery</div>
+                    </div>
+                    <p>Browse and search for games with advanced filtering options</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <svg><use xlink:href="#icon-user"></use></svg>
+                        </div>
+                        <div class="feature-title">User Accounts</div>
+                    </div>
+                    <p>Create personal profiles with authentication</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <svg><use xlink:href="#icon-message-circle"></use></svg>
+                        </div>
+                        <div class="feature-title">Social Features</div>
+                    </div>
+                    <p>Review games and interact with other users' reviews</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <svg><use xlink:href="#icon-bookmark"></use></svg>
+                        </div>
+                        <div class="feature-title">Personalization</div>
+                    </div>
+                    <p>Create and manage game wishlists</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">
+                            <svg><use xlink:href="#icon-monitor"></use></svg>
+                        </div>
+                        <div class="feature-title">Responsive Design</div>
+                    </div>
+                    <p>Optimized for all device sizes</p>
+                </div>
+            </section>
+            
+            <section id="technology-stack" class="section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <svg><use xlink:href="#icon-code"></use></svg>
+                    </div>
+                    <h2>Technology Stack</h2>
+                </div>
+                <p>The project is built using the following technologies:</p>
+                
+                <table>
+                    <tr>
+                        <th>Category</th>
+                        <th>Technologies</th>
+                    </tr>
+                    <tr>
+                        <td>Frontend Framework</td>
+                        <td>Next.js 15.0.1 (App Router)</td>
+                    </tr>
+                    <tr>
+                        <td>UI Library</td>
+                        <td>React 18.3.1</td>
+                    </tr>
+                    <tr>
+                        <td>Styling</td>
+                        <td>Tailwind CSS, CSS Modules</td>
+                    </tr>
+                    <tr>
+                        <td>State Management</td>
+                        <td>React Context API, React Query</td>
+                    </tr>
+                    <tr>
+                        <td>Form Handling</td>
+                        <td>React Hook Form, Zod</td>
+                    </tr>
+                    <tr>
+                        <td>Database</td>
+                        <td>MongoDB (with Mongoose ODM)</td>
+                    </tr>
+                    <tr>
+                        <td>Authentication</td>
+                        <td>JWT (JSON Web Tokens), Cookies</td>
+                    </tr>
+                    <tr>
+                        <td>Content Delivery</td>
+                        <td>Cloudinary (image uploads)</td>
+                    </tr>
+                    <tr>
+                        <td>UI Components</td>
+                        <td>Radix UI, Framer Motion</td>
+                    </tr>
+                    <tr>
+                        <td>API Integration</td>
+                        <td>External Gaming API</td>
+                    </tr>
+                </table>
+                
+                <div class="tech-stack">
+                    <div class="tech-item">
+                        <svg><use xlink:href="#icon-code"></use></svg>
+                        Next.js
+                    </div>
+                    <div class="tech-item">
+                        <svg><use xlink:href="#icon-layers"></use></svg>
+                        React
+                    </div>
+                    <div class="tech-item">
+                        <svg><use xlink:href="#icon-layout"></use></svg>
+                        Tailwind CSS
+                    </div>
+                    <div class="tech-item">
+                        <svg><use xlink:href="#icon-lock"></use></svg>
+                        JWT Auth
+                    </div>
+                    <div class="tech-item">
+                        <svg><use xlink:href="#icon-database"></use></svg>
+                        MongoDB
+                    </div>
+                </div>
+            </section>
+            
+            <section id="project-structure" class="section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <svg><use xlink:href="#icon-folder"></use></svg>
+                    </div>
+                    <h2>Project Structure</h2>
+                </div>
+                <p>The project follows a modular structure organized around Next.js App Router conventions:</p>
+                
+                <pre data-language="Directory Structure"><code>gamingnextjs/
+├── app/                      # Main application code
+│   ├── (grid)/               # Layout group for pages with grid layout
+│   │   ├── game/             # Game detail pages
+│   │   ├── games/            # Games listing pages
+│   │   ├── wishlist/         # User wishlist pages
+│   │   ├── layout.tsx        # Shared layout for grid pages
+│   │   └── page.tsx          # Homepage
+│   ├── actions/              # Server actions
+│   ├── api/                  # API handlers and external API integration
+│   ├── components/           # UI components
+│   ├── constants/            # Constants and configuration values
+│   ├── context/              # React context providers
+│   ├── hooks/                # Custom React hooks
+│   ├── models/               # Mongoose data models
+│   ├── login/                # Login page
+│   ├── signup/               # Signup page
+│   └── types/                # TypeScript type definitions
+├── components/               # Shared UI components
+├── lib/                      # Utility functions and libraries
+├── public/                   # Static assets
+└── middleware.ts             # Next.js middleware for route protection</code></pre>
+            </section>
+            
+            <section id="core-features" class="section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <svg><use xlink:href="#icon-package"></use></svg>
+                    </div>
+                    <h2>Core Features</h2>
+                </div>
+                
+                <h3>Game Browsing and Discovery</h3>
+                <p>The platform provides multiple ways to discover games:</p>
+                <ul>
+                    <li>Homepage Sliders: Featured games organized by platform and rating</li>
+                    <li>Search Functionality: Find games by title with debounced search</li>
+                    <li>Filtering: Filter games by platform, genre, and other criteria</li>
+                    <li>Game Details: Comprehensive game information with screenshots and similar games</li>
+                </ul>
+                
+                <h3>User Account System</h3>
+                <p>The application features a complete user account system:</p>
+                <ul>
+                    <li>Registration: Create new accounts with email verification</li>
+                    <li>Authentication: Secure login with JWT tokens</li>
+                    <li>Profile Management: Update profile information and avatar</li>
+                    <li>Data Persistence: User preferences and activities stored in MongoDB</li>
+                </ul>
+                
+                <h3>Social Interaction</h3>
+                <p>Users can interact with each other through:</p>
+                <ul>
+                    <li>Game Reviews: Write and read reviews for games</li>
+                    <li>Rating System: Rate games on a scale of 0-10</li>
+                    <li>Comments: Reply to reviews</li>
+                    <li>Like System: Like reviews and replies</li>
+                </ul>
+                
+                <h3>Personalization</h3>
+                <p>The platform offers personalization options:</p>
+                <ul>
+                    <li>Wishlist: Save games to a personal wishlist</li>
+                    <li>Top Ten List: Create a list of favorite games</li>
+                    <li>User Profile: Customize profile with avatar and bio</li>
+                </ul>
+            </section>
+            
+            <section id="authentication" class="section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <svg><use xlink:href="#icon-lock"></use></svg>
+                    </div>
+                    <h2>Authentication</h2>
+                </div>
+                <p>Authentication is handled server-side using JWT tokens stored in HTTP-only cookies:</p>
+                
+                <h3>Authentication Flow</h3>
+                <ol>
+                    <li>Registration: User creates an account with email, password, and name</li>
+                    <li>Password Protection: Passwords are hashed using bcrypt before storage</li>
+                    <li>Login: User credentials are verified and JWT token is generated</li>
+                    <li>Session Management: Token is stored in HTTP-only cookies</li>
+                    <li>Authorization: Protected routes check for valid token using middleware</li>
+                    <li>Logout: Cookie is cleared from the browser</li>
+                </ol>
+                
+                <h3>Security Measures</h3>
+                <ul>
+                    <li>HTTP-Only Cookies: Prevents client-side JavaScript access to tokens</li>
+                    <li>Password Hashing: Secures user passwords with bcrypt</li>
+                    <li>JWT Expiration: Tokens expire after 90 minutes</li>
+                    <li>Server-Side Validation: All user inputs are validated server-side</li>
+                </ul>
+            </section>
+            
+            <section id="data-models" class="section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <svg><use xlink:href="#icon-database"></use></svg>
+                    </div>
+                    <h2>Data Models</h2>
+                </div>
+                <p>The application uses MongoDB with Mongoose ODM for data modeling:</p>
+                
+                <h3>User Model</h3>
+                <pre data-language="TypeScript"><code>// User data model with profile information and relationships
+const userSchema = new Schema({
+  name: { type: String, required: true },
+  email: { type: String, unique: true, required: true },
+  password: { type: String, select: false, required: true },
+  avatar: {
+    secure_url: { type: String, required: true },
+    public_id: { type: String, required: true },
+  },
+  wishlist: [{ type: String }],
+  topTenList: [{ type: String, max: 10 }],
+  gamesRating: [{ type: Schema.Types.ObjectId, ref: "GameReview" }],
+  bio: { type: String, max: 500, default: "No bio" },
+  createdAt: { type: Date, default: Date.now },
+});</code></pre>
+                
+                <h3>Game Review Model</h3>
+                <pre data-language="TypeScript"><code>// Game review with user relationship and interactions
+const gameReviewSchema = new Schema({
+  gameId: { type: String, required: true },
+  userId: { type: Schema.Types.ObjectId, ref: "User", required: true },
+  reviewText: { type: String, required: true },
+  rating: { type: Number, required: true, min: 0, max: 10 },
+  createdAt: { type: Date, default: Date.now },
+  likes: [{ type: Schema.Types.ObjectId, ref: "User", unique: true }],
+});</code></pre>
+                
+                <h3>Review Reply Model</h3>
+                <pre data-language="TypeScript"><code>// Reply to a review with user relationship
+const reviewReplySchema = new Schema({
+  reviewId: { type: Schema.Types.ObjectId, ref: "GameReview", required: true }, 
+  userId: { type: Schema.Types.ObjectId, ref: "User", required: true },
+  content: { type: String, required: true }, 
+  likes: [{ type: Schema.Types.ObjectId, ref: "User" }], 
+  createdAt: { type: Date, default: Date.now }, 
+});</code></pre>
+            </section>
+            
+            <section id="api-integration" class="section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <svg><use xlink:href="#icon-server"></use></svg>
+                    </div>
+                    <h2>API Integration</h2>
+                </div>
+                <p>The application integrates with an external gaming API to fetch game data:</p>
+                
+                <h3>API Modules</h3>
+                <p>The <code>api.ts</code> module provides the following functions:</p>
+                <ul>
+                    <li><code>searchGames</code>: Search for games with filters and pagination</li>
+                    <li><code>getGame</code>: Get detailed information about a specific game</li>
+                    <li><code>getGameFromgenres</code>: Get games by genre</li>
+                    <li><code>gamebyplatforms</code>: Get games by platform</li>
+                    <li><code>getGamesByIds</code>: Get multiple games by their IDs</li>
+                </ul>
+                
+                <h3>Error Handling</h3>
+                <p>API requests include comprehensive error handling to ensure a smooth user experience even when external services are unavailable.</p>
+            </section>
+            
+            <section id="front-end-components" class="section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <svg><use xlink:href="#icon-layers"></use></svg>
+                    </div>
+                    <h2>Front-end Components</h2>
+                </div>
+                <p>The application is built using a component-based architecture with reusable UI elements:</p>
+                
+                <h3>Key Components</h3>
+                <ul>
+                    <li><strong>NavBar</strong>: Main navigation with search functionality</li>
+                    <li><strong>SideBar</strong>: Secondary navigation with category filters</li>
+                    <li><strong>GamesSlider</strong>: Horizontal scrollable game cards</li>
+                    <li><strong>Hero</strong>: Featured game showcase</li>
+                    <li><strong>GameCard</strong>: Individual game display</li>
+                    <li><strong>ReviewForm</strong>: Form for submitting game reviews</li>
+                    <li><strong>ReplyForm</strong>: Form for replying to reviews</li>
+                    <li><strong>WishlistButton</strong>: Toggle button for adding/removing games from wishlist</li>
+                </ul>
+                
+                <h3>Context Providers</h3>
+                <ul>
+                    <li><strong>WishlistProvider</strong>: Manages wishlist state across the application</li>
+                    <li><strong>QueryProvider</strong>: Configures React Query for data fetching</li>
+                </ul>
+                
+                <h3>Custom Hooks</h3>
+                <p>The application utilizes custom hooks for shared logic:</p>
+                <ul>
+                    <li><strong>useWishlist</strong>: Hook for wishlist operations</li>
+                    <li><strong>useAuth</strong>: Hook for authentication status and operations</li>
+                </ul>
+            </section>
+            
+            <section id="user-interface" class="section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <svg><use xlink:href="#icon-layout"></use></svg>
+                    </div>
+                    <h2>User Interface</h2>
+                </div>
+                <p>The UI is designed to be modern, responsive, and user-friendly:</p>
+                
+                <h3>Design System</h3>
+                <ul>
+                    <li><strong>Color Scheme</strong>: Dark theme with accent colors for gaming aesthetic</li>
+                    <li><strong>Typography</strong>: Montserrat font for readability and modern feel</li>
+                    <li><strong>Responsiveness</strong>: Grid-based layout that adapts to all screen sizes</li>
+                    <li><strong>Animations</strong>: Subtle animations with Framer Motion for enhanced user experience</li>
+                </ul>
+                
+                <h3>Layout Structure</h3>
+                <ul>
+                    <li><strong>Grid Layout</strong>: 12-column grid system for responsive design</li>
+                    <li><strong>Sidebar</strong>: Navigation and filtering options</li>
+                    <li><strong>Main Content</strong>: Game displays and interactive elements</li>
+                    <li><strong>Toasts</strong>: Notifications for user actions</li>
+                </ul>
+            </section>
+            
+            <section id="deployment" class="section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <svg><use xlink:href="#icon-cloud"></use></svg>
+                    </div>
+                    <h2>Deployment & Configuration</h2>
+                </div>
+                
+                <h3>Environment Variables</h3>
+                <p>The application requires the following environment variables:</p>
+                
+                <pre data-language="Environment Variables"><code># Authentication
+JWT_SECRET=your_jwt_secret_key
+
+# MongoDB Connection
+MONGODB_URI=your_mongodb_connection_string
+
+# External API
+API_KEY=your_game_api_key
+API_URL=https://api.example.com/
+
+# Cloudinary Configuration
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret</code></pre>
+                
+                <h3>Deployment Options</h3>
+                <p>The application can be deployed using:</p>
+                <ul>
+                    <li><strong>Vercel</strong>: Optimized for Next.js applications</li>
+                    <li><strong>Netlify</strong>: Alternative deployment platform</li>
+                    <li><strong>Self-hosted</strong>: Traditional server deployment</li>
+                </ul>
+            </section>
+            
+            <section id="getting-started" class="section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <svg><use xlink:href="#icon-play"></use></svg>
+                    </div>
+                    <h2>Getting Started</h2>
+                </div>
+                
+                <h3>Installation</h3>
+                <ol>
+                    <li>Clone the repository:
+                        <pre data-language="Bash"><code>git clone https://github.com/yourusername/gamingnextjs.git
+cd gamingnextjs</code></pre>
+                    </li>
+                    <li>Install dependencies:
+                        <pre data-language="Bash"><code>npm install</code></pre>
+                    </li>
+                    <li>Create a <code>.env</code> file based on <code>example.env</code> and fill in your environment variables.</li>
+                </ol>
+                
+                <h3>Development</h3>
+                <p>Start the development server:</p>
+                <pre data-language="Bash"><code>npm run dev</code></pre>
+                <p>Access the application at <code>http://localhost:3000</code>.</p>
+                
+                <h3>Production Build</h3>
+                <p>Create a production build:</p>
+                <pre data-language="Bash"><code>npm run build
+npm start</code></pre>
+                
+                <h3>Testing</h3>
+                <p>The project uses React Testing Library for component testing:</p>
+                <pre data-language="Bash"><code>npm run test</code></pre>
+            </section>
+        </main>
+    </div>
+    
+    <button class="back-to-top" id="backToTop">
+        <svg><use xlink:href="#icon-arrow-up"></use></svg>
+    </button>
+
+    <script src="documentation.js"></script>
+    <script>
+        // Inline script for SVG icon loading
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load SVGs and then replace placeholder SVGs
+            fetch('documentation-icons.svg')
+                .then(response => response.text())
+                .then(svgContent => {
+                    // Create a DOM parser to parse the SVG content
+                    const parser = new DOMParser();
+                    const svgDoc = parser.parseFromString(svgContent, 'image/svg+xml');
+                    
+                    // Get all the symbol elements
+                    const symbols = svgDoc.querySelectorAll('symbol');
+                    
+                    // Create a hidden div to hold the symbols
+                    const symbolsContainer = document.createElement('div');
+                    symbolsContainer.style.display = 'none';
+                    
+                    // Create an SVG element to hold all the symbols
+                    const svgElement = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                    
+                    // Append each symbol to the SVG element
+                    symbols.forEach(symbol => {
+                        svgElement.appendChild(symbol.cloneNode(true));
+                    });
+                    
+                    // Append the SVG element to the symbols container
+                    symbolsContainer.appendChild(svgElement);
+                    
+                    // Append the symbols container to the body
+                    document.body.appendChild(symbolsContainer);
+                })
+                .catch(error => {
+                    console.error('Error loading SVG icons:', error);
+                });
+        });
+    </script>
+</body>
+</html> 
